@@ -1,30 +1,48 @@
-import React from 'react'
+import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./components/Home"
-import About from "./components/About"
-import Blog from "./components/Blog"
-import Contact from "./components/Contact"
-import Project from "./components/Project"
-
-
-
+import { grey, indigo, orange} from "@mui/material/colors"
+import Home from "./components/Home";
+import About from "./components/About";
+import Blog from "./components/Blog";
+import Contact from "./components/Contact";
+import Project from "./components/Project";
+import Header from "./Header";
+import { ThemeContext } from "./ThemeContext";
+import { createTheme, ThemeProvider } from "@mui/material";
+import { useState } from "react";
 
 const App = () => {
+  const[theme,setTheme]=useState("light");
+  const toggleTheme=()=>{
+    const newTheme=theme==="light"?"dark":"light";
+    setTheme(newTheme)
+  }
+  const muitheme=createTheme({
+    palette:{
+      mode:theme,
+      primary:grey,
+    secondary:grey,    },
+  })
+
 
   return (
     <>
-<BrowserRouter>
-  <Routes>
-    <Route path ="/" element={<Home/>}/>
-    <Route path ="about" element={<About/>}/>
-    <Route path ="/blog" element={<Blog/>}/>
-    <Route path ="/contact" element={<Contact/>}/>
-    <Route path ="/project" element={<Project/>}/>
-  </Routes>
-</BrowserRouter>
-
+      <ThemeProvider theme={muitheme}>
+        <ThemeContext.Provider value={{theme, toggleTheme}}>
+          <BrowserRouter>
+            <Header />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="about" element={<About />} />
+              <Route path="/blog" element={<Blog />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/project" element={<Project />} />
+            </Routes>
+          </BrowserRouter>
+        </ThemeContext.Provider>
+      </ThemeProvider>
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
