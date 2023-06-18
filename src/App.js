@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { grey, indigo, orange} from "@mui/material/colors"
+
 import Home from "./components/Home";
 import About from "./components/About";
 import Blog from "./components/Blog";
@@ -20,8 +20,13 @@ const App = () => {
   const muitheme=createTheme({
     palette:{
       mode:theme,
-      primary:grey,
-    secondary:grey,    },
+      primary:{
+        main:"#F5F5F5"
+
+      },
+    secondary:{
+      main:"#F5F5F5"
+    },    },
   })
 
 
