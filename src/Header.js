@@ -4,6 +4,7 @@ import { AppBar, Toolbar, IconButton, Container, Menu, MenuItem, Box, Typography
 import { Home as HomeIcon, Info as InfoIcon, Receipt as ReceiptIcon, Work as WorkIcon, Brightness4 as Brightness4Icon, Brightness7 as Brightness7Icon, Menu as MenuIcon } from '@mui/icons-material';
 import { ThemeContext } from './ThemeContext';
 import EmailIcon from '@mui/icons-material/Email';
+import Contact from './components/Contact';
 
 const Header = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);
@@ -93,7 +94,7 @@ const Header = () => {
         </Menu>
         <Box sx={{ flexGrow: 1 }} />
           <IconButton component={NavLink} to="/contact" color="inherit">
-            <EmailIcon />
+            <Contact />
           </IconButton>
           <IconButton onClick={handleThemeChange} color="inherit">
             {theme === 'light' ? <Brightness4Icon /> : <Brightness7Icon />}
