@@ -3,7 +3,7 @@ import GitHubIcon from "@material-ui/icons/GitHub";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import bilal from "../Images/bilal.jpeg";
-import { Container } from "@mui/material";
+
 import { ThemeContext } from "../ThemeContext";
 import { useContext } from "react";
 
@@ -23,15 +23,15 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     justifyContent: "flex-start",
     alignItems: "flex-start",
-    paddingLeft: "170px",
+    paddingLeft: "100px",
     paddingTop: "40px",
     [theme.breakpoints.down("sm")]: {
       width: "100%",
       height: "50%",
       justifyContent: "center",
       alignItems: "center",
-      paddingLeft: "20px", // Adjust the padding value as per your needs
-      paddingTop: "20px", // Adjust the padding value as per your needs
+      paddingLeft: "20px", 
+      paddingTop: "20px", 
     },
   },
   imageBox: {
@@ -41,9 +41,10 @@ const useStyles = makeStyles((theme) => ({
     padding: "20px",
     width: "50%",
     [theme.breakpoints.down("sm")]: {
+      marginTop:"70px",
       width: "100%",
       height: "80%",
-      padding: "50px", // Adjust the padding value as per your needs
+      padding: "50px", 
     },
   },
   image: {
@@ -53,6 +54,11 @@ const useStyles = makeStyles((theme) => ({
     height: "300px",
     borderRadius: "50%",
     objectFit: "cover",
+    [theme.breakpoints.down("sm")]: {
+      width: "200px",
+      height: "200px",
+      
+    },
   },
   buttonContainer: {
     display: "flex",
@@ -62,8 +68,7 @@ const useStyles = makeStyles((theme) => ({
 
   },
   Icon: {
-    display: "flex",
-    justifyContent: "space-between",
+   
   
     color: "#8bb2c3",
     [theme.breakpoints.down("sm")]: {
@@ -91,11 +96,11 @@ function Home() {
           I'm fluent in English, Urdu, and JavaScript
         </Typography>{" "}
         <br />
-        <Container  className={classes.Icon}>
+        <Box className={classes.Icon}>
           <GitHubIcon style={{ fontSize: 50 }} />{" "}
           <LinkedInIcon style={{ fontSize: 50 }} />{" "}
           <TwitterIcon style={{ fontSize: 50 }} />
-        </Container>
+        </Box>
         <br />
         <Box className={classes.buttonContainer}>
           <Button variant="contained" style={{backgroundColor:"#8bb2c3"}} >My work</Button>
