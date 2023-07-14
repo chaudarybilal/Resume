@@ -8,7 +8,7 @@ import { useContext } from "react";
 const useStyles = makeStyles((theme) => ({
   container: {
     display: "flex",
-    height: "80vh",
+    height: "110vh",
     [theme.breakpoints.down("sm")]: {
       flexDirection: "column",
     },

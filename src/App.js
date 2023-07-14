@@ -11,6 +11,7 @@ import Header from "./Header";
 import { ThemeContext } from "./ThemeContext";
 import { createTheme, ThemeProvider } from "@mui/material";
 import { useState } from "react";
+import Footer from "./Footer";
 
 const App = () => {
   const[theme,setTheme]=useState("light");
@@ -44,6 +45,7 @@ const App = () => {
               <Route path="/contact" element={<Contact />} />
               <Route path="/project" element={<Project />} />
             </Routes>
+            <Footer/>
           </BrowserRouter>
         </ThemeContext.Provider>
       </ThemeProvider>
